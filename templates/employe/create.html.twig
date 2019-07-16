@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formEmploye 'bootstrap_4_layout.html.twig'%}
+
+
+{% block body %}
+
+    <h1>
+        <p>FORMULAIRE D'AJOUT</p>
+    <h1/>
+
+        {{ form_start(formEmploye) }}
+
+    {{ form_row(formEmploye.matricule, {'attr' : {'placeholder' : "Entrer matricule"}}) }}
+    {{ form_row(formEmploye.nomcomplet, {'attr' : {'placeholder' : "Entrer nomcomplet"}}) }}
+    {{ form_row(formEmploye.datenaiss, {'attr' : {'placeholder' : "Entrer "}}) }}
+    {{ form_row(formEmploye.salaire, {'attr' : {'placeholder' : "Entrer salaire"}}) }}
+    {{ form_row(formEmploye.service, {'attr' : {'placeholder' : "Entrer"}}) }} 
+
+    <button type="submit" class="btn btn-primary btn-lg">
+    {% if editMode %}
+        Modifier
+    {% else %}
+        Ajouter Employe
+    {% endif %}
+    
+    </button>
+
+        {{ form_end(formEmploye) }}
+
+        {% endblock %}
